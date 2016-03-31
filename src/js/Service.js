@@ -1,13 +1,28 @@
+/**
+ * Service responsible for fetching files asynchronously
+ *
+ * @class Service
+ */
 class Service {
 
 	/*
-	todo: caching, proxy
+	todo
 	 */
 	constructor() {
 		this.cache = {};
 		this.proxy = '';
 	}
 
+	/**
+	 * Makes an HTTP GET request
+	 *
+	 * @method get
+	 * @param {String} url
+	 * @param {Object|null} data | Query parameters
+	 * @param {String} proxy | Server-side proxy that will forward our request
+	 * @param {String} dataType | Datatype we are expecting to recieve
+	 * @returns {Object.<XMLHttpRequest>} | response from url
+	 */
 	static get(url, data = null, proxy = null, dataType = 'text') {
 		if(proxy) {
 			data = {
