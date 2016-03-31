@@ -1,13 +1,13 @@
 const config = {
 	options: {
-		search: 'healthy',
-		key: null,
+		search: 'spotify',
+		media: 'all',
 		proxy: 'proxy.php',
-		imgProxy: null,
 		template: 'template1',
 		endpoints: {
 			development: 'src/js/data/service-shim.json',
-			production: 'http://itunes.apple.com/lookup?id=400274934'
+			production: 'http://itunes.apple.com/search?'
+			// 'http://itunes.apple.com/lookup?id=400274934'
 		},
 		env: 'production'
 	}

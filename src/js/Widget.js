@@ -2,20 +2,26 @@ import config from './config';
 import Service from './Service';
 const Mustache = require('./libs/mustache');
 
-class RecipeWidget {
+class ItunesWidget {
 
 	constructor(el, options) {
 
 		this.el = el;
 		this.opts = $.extend(config.options, options);
 
+		this.data = {
+			term: this.search,
+			media: this.media
+		};
 		// Run multiple promises. Wait for both responses
 		Promise.all([
-			Service.get(this.opts.endpoints[this.opts.env], null, this.opts.proxy),
+			Service.get(this.opts.endpoints[this.opts.env], this.data, this.opts.proxy),
 			Service.get(`templates/${this.opts.template}.hbs`)
 		]).then((responses) => {
 			const template = responses[1];
-			const data = RecipeWidget.mapData(responses[0]);
+			console.log(responses[0]);
+			return false;
+			const data = ItunesWidget.mapData(responses[0]);
 			const tmpl = Mustache.render(template, data);
 			this.build(tmpl);
 		}).catch((e) => {
@@ -41,4 +47,4 @@ class RecipeWidget {
 	}
 }
 
-export default RecipeWidget;
+export default ItunesWidget;

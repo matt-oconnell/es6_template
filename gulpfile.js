@@ -15,7 +15,7 @@ gulp.task('serve', ['sass', 'js'], function() {
 
 	browserSync.init({
 		proxy: {
-			target: 's.box/_e/template'
+			target: 's.box/orca/es6_template'
 		}
 	});
 

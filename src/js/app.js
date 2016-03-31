@@ -2,11 +2,11 @@ if(typeof $ == 'undefined') {
 	console.log('jQuery required!');
 }
 
-import RecipeWidget from './Widget';
+import ItunesWidget from './Widget';
 
-// Extend JQuery fn for $('.class').recipeWidget()
-$.fn.recipeWidget = function(options) {
+// Extend JQuery fn for $('.class').itunesWidget()
+$.fn.itunesWidget = function(options) {
 	return this.each(function() {
-		(new RecipeWidget(this, options));
+		(new ItunesWidget(this, options));
 	});
 };
