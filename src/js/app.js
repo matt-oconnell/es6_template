@@ -1,12 +1,12 @@
-import Widget from './Widget';
-
 if(typeof $ == 'undefined') {
-	console.log('Zepto or JQuery required!');
+	console.log('jQuery required!');
 }
 
-$(document).ready(function() {
-	$('body').css('color', 'blue');
-});
+import RecipeWidget from './Widget';
 
-const testWidget = new Widget('test');
-testWidget.sayName();
+// Extend JQuery fn for $('.class').recipeWidget()
+$.fn.recipeWidget = function(options) {
+	return this.each(function() {
+		(new RecipeWidget(this, options));
+	});
+};
