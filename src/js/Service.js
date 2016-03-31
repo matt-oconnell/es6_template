@@ -1,12 +1,22 @@
 class Service {
 
+	/*
+	todo: caching, proxy
+	 */
 	constructor() {
 		this.cache = {};
+		this.proxy = '';
 	}
 
-	static get() {
-		return $.getJSON('src/js/data/service-shim.json');
-		// return $.getJSON('http://itunes.apple.com/lookup?id=400274934');
+	static get(url, data = null, dataType = 'html', proxy = null) {
+		return $.ajax({
+			url: url,
+			method: 'get',
+			data: data,
+			dataType: dataType
+		}).fail((e) => {
+			console.log('Get failed: ', e.responseText);
+		});
 	}
 
 }

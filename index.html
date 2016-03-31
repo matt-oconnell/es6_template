@@ -13,9 +13,12 @@
 
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="dist/js/app.js"></script>
-    <script>$('.recipes').recipeWidget({
-        test: 1
-    })</script>
+    <script>
+        $('.recipes').recipeWidget({
+            template: 'template1',
+            env: 'development'
+        })
+    </script>
 
 </body>
 </html>

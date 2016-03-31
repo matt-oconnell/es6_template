@@ -1,2 +1,7 @@
-body {
-  color: green; }
+.template1 {
+  color: green;
+  background: blue; }
+
+.template2 {
+  color: white;
+  background: black; }
