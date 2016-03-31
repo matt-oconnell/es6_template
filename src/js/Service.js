@@ -11,7 +11,7 @@ class Service {
 	static get(url, data = null, proxy = null, dataType = 'text') {
 		if(proxy) {
 			data = {
-				url: url
+				url: url + $.param(data)
 			};
 			url = proxy;
 		}
