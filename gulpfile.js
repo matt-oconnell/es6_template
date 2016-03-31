@@ -14,8 +14,8 @@ var browserSync = require('browser-sync').create();
 gulp.task('serve', ['sass', 'js'], function() {
 
 	browserSync.init({
-		server: {
-			baseDir: './'
+		proxy: {
+			target: 's.box/_e/template'
 		}
 	});
 

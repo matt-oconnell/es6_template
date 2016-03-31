@@ -2,7 +2,7 @@ const config = {
 	options: {
 		search: 'healthy',
 		key: null,
-		serverSideScript: '../curl.php',
+		proxy: 'proxy.php',
 		imgProxy: null,
 		template: 'template1',
 		endpoints: {

@@ -8,7 +8,13 @@ class Service {
 		this.proxy = '';
 	}
 
-	static get(url, data = null, dataType = 'html', proxy = null) {
+	static get(url, data = null, proxy = null, dataType = 'text') {
+		if(proxy) {
+			data = {
+				url: url
+			};
+			url = proxy;
+		}
 		return $.ajax({
 			url: url,
 			method: 'get',

@@ -11,7 +11,7 @@ class RecipeWidget {
 
 		// Run multiple promises. Wait for both responses
 		Promise.all([
-			Service.get(this.opts.endpoints[this.opts.env]),
+			Service.get(this.opts.endpoints[this.opts.env], null, this.opts.proxy),
 			Service.get(`templates/${this.opts.template}.hbs`)
 		]).then((responses) => {
 			const template = responses[1];
